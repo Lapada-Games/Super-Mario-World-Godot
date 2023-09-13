@@ -1,0 +1,151 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://assets/Assets Mario/mariotile.png" type="Texture" id=1]
+[ext_resource path="res://assets/Assets Mario/mario.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Mario.gd" type="Script" id=3]
+[ext_resource path="res://assets/Assets Mario/run0.tres" type="Texture" id=4]
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=14]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=18]
+points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
+
+[sub_resource type="TileSet" id=3]
+1/name = "mariotile.png 1"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 512, 96, 96, 96 )
+1/tile_mode = 2
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 32, 32 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 7 )
+1/shape_one_way = true
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 1, 0 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 0 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 12 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 13 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 14 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 18 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16.5, 20 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 2 )
+region = Rect2( 248, 40, 16, 20 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 2 )
+region = Rect2( 208, 40, 16, 20 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 208, 0, 16, 20 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 328, 0, 16, 20 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ SubResource( 16 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 17 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 4 ) ],
+"loop": true,
+"name": "run",
+"speed": 20.0
+} ]
+
+[node name="Level" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 3 )
+cell_size = Vector2( 32, 32 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( 655370, 1, 0, 655371, 1, 1, 655372, 1, 1, 655373, 1, 1, 655374, 1, 1, 655375, 1, 1, 655376, 1, 1, 655377, 1, 1, 655378, 1, 1, 655379, 1, 1, 655380, 1, 1, 655381, 1, 2, 720906, 1, 65536, 720907, 1, 65537, 720908, 1, 65537, 720909, 1, 65537, 720910, 1, 65537, 720911, 1, 65537, 720912, 1, 65537, 720913, 1, 65537, 720914, 1, 65537, 720915, 1, 65537, 720916, 1, 65537, 720917, 1, 65538, 786442, 1, 65536, 786443, 1, 65537, 786444, 1, 65537, 786445, 1, 65537, 786446, 1, 65537, 786447, 1, 65537, 786448, 1, 65537, 786449, 1, 65537, 786450, 1, 65537, 786451, 1, 65537, 786452, 1, 65537, 786453, 1, 65538, 851970, 1, 0, 851971, 1, 1, 851972, 1, 1, 851973, 1, 1, 851974, 1, 1, 851975, 1, 1, 851976, 1, 1, 851977, 1, 1, 851978, 1, 1, 851979, 1, 1, 851980, 1, 1, 851981, 1, 1, 851982, 1, 1, 851983, 1, 1, 851984, 1, 1, 851985, 1, 1, 851986, 1, 1, 851987, 1, 1, 851988, 1, 1, 851989, 1, 1, 851990, 1, 1, 851991, 1, 1, 851992, 1, 1, 851993, 1, 2, 851997, 1, 0, 851998, 1, 1, 851999, 1, 1, 917506, 1, 65536, 917507, 1, 65537, 917508, 1, 65537, 917509, 1, 65537, 917510, 1, 65537, 917511, 1, 65537, 917512, 1, 65537, 917513, 1, 65537, 917514, 1, 65537, 917515, 1, 65537, 917516, 1, 65537, 917517, 1, 65537, 917518, 1, 65537, 917519, 1, 65537, 917520, 1, 65537, 917521, 1, 65537, 917522, 1, 65537, 917523, 1, 65537, 917524, 1, 65537, 917525, 1, 65537, 917526, 1, 65537, 917527, 1, 65537, 917528, 1, 65537, 917529, 1, 65538, 917533, 1, 65536, 917534, 1, 65537, 917535, 1, 65537, 983042, 1, 65536, 983043, 1, 65537, 983044, 1, 65537, 983045, 1, 65537, 983046, 1, 65537, 983047, 1, 65537, 983048, 1, 65537, 983049, 1, 65537, 983050, 1, 65537, 983051, 1, 65537, 983052, 1, 65537, 983053, 1, 65537, 983054, 1, 65537, 983055, 1, 65537, 983056, 1, 65537, 983057, 1, 65537, 983058, 1, 65537, 983059, 1, 65537, 983060, 1, 65537, 983061, 1, 65537, 983062, 1, 65537, 983063, 1, 65537, 983064, 1, 65537, 983065, 1, 65538, 983069, 1, 65536, 983070, 1, 65537, 983071, 1, 65537, 1048578, 1, 65536, 1048579, 1, 65537, 1048580, 1, 65537, 1048581, 1, 65537, 1048582, 1, 65537, 1048583, 1, 65537, 1048584, 1, 65537, 1048585, 1, 65537, 1048586, 1, 65537, 1048587, 1, 65537, 1048588, 1, 65537, 1048589, 1, 65537, 1048590, 1, 65537, 1048591, 1, 65537, 1048592, 1, 65537, 1048593, 1, 65537, 1048594, 1, 65537, 1048595, 1, 65537, 1048596, 1, 65537, 1048597, 1, 65537, 1048598, 1, 65537, 1048599, 1, 65537, 1048600, 1, 65537, 1048601, 1, 65538, 1048605, 1, 65536, 1048606, 1, 65537, 1048607, 1, 65537, 1114114, 1, 65536, 1114115, 1, 65537, 1114116, 1, 65537, 1114117, 1, 65537, 1114118, 1, 65537, 1114119, 1, 65537, 1114120, 1, 65537, 1114121, 1, 65537, 1114122, 1, 65537, 1114123, 1, 65537, 1114124, 1, 65537, 1114125, 1, 65537, 1114126, 1, 65537, 1114127, 1, 65537, 1114128, 1, 65537, 1114129, 1, 65537, 1114130, 1, 65537, 1114131, 1, 65537, 1114132, 1, 65537, 1114133, 1, 65537, 1114134, 1, 65537, 1114135, 1, 65537, 1114136, 1, 65537, 1114137, 1, 65538, 1114141, 1, 65536, 1114142, 1, 65537, 1114143, 1, 65537 )
+
+[node name="Mario" type="KinematicBody2D" parent="."]
+position = Vector2( 182, 387 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mario"]
+position = Vector2( 0.5, 0 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Mario"]
+scale = Vector2( 2.125, 2.125 )
+frames = SubResource( 2 )
+animation = "fall"

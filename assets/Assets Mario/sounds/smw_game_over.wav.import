@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/smw_game_over.wav-4904bddee05d09f0a1b7b648542e9747.sample"
+
+[deps]
+
+source_file="res://assets/Assets Mario/sounds/smw_game_over.wav"
+dest_files=[ "res://.import/smw_game_over.wav-4904bddee05d09f0a1b7b648542e9747.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
