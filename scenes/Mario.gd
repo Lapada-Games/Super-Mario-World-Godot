@@ -7,7 +7,7 @@ const MAXVELOCITY = 250
 const ACCELERATION = 30
 var JUMP_FORCE = -650
 var jump = false
-
+var jump_count = 1
 
 func _physics_process(delta):
 	motion.y += gravity
@@ -24,10 +24,13 @@ func _physics_process(delta):
 		motion.x = lerp(motion.x, 0, 0.2)
 		$Sprite.play("idle")
 		
+	if Input.is_action_just_pressed("ui_up") and jump_count > 0:
+		jump_count -= 1
+		motion.y = JUMP_FORCE
+		
 	if is_on_floor():
-		if Input.is_action_pressed("ui_up"):
-			motion.y = JUMP_FORCE
-			
+		jump_count = 1
+		
 	else:
 		if motion.y < 0:
 			$Sprite.play("jump")
