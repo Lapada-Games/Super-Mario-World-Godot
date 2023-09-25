@@ -1,4 +1,5 @@
 extends KinematicBody2D
+class_name Player
 
 var gravity = 30
 var motion = Vector2()
@@ -42,3 +43,7 @@ func _physics_process(delta):
 	
 	
 	motion = move_and_slide(motion, UP)
+
+
+func die():
+	$AnimationPlayer.play("Dead")
