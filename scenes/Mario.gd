@@ -10,6 +10,10 @@ var JUMP_FORCE = -650
 var jump = false
 var jump_count = 1
 
+func _ready():
+	position.x = 180
+	position.y = 360
+
 func _physics_process(delta):
 	motion.y += gravity
 	
