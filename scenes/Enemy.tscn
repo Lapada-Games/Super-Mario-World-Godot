@@ -136,10 +136,10 @@ animations = [ {
 extents = Vector2( 9.5, 11.5 )
 
 [sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 8, 0.5 )
+extents = Vector2( 12, 2.25 )
 
 [sub_resource type="RectangleShape2D" id=27]
-extents = Vector2( 12.5, 13 )
+extents = Vector2( 13, 13 )
 
 [node name="Enemy" type="KinematicBody2D"]
 script = ExtResource( 3 )
@@ -147,7 +147,7 @@ script = ExtResource( 3 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 13 )
 animation = "idle"
-frame = 10
+frame = 8
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -157,7 +157,7 @@ shape = SubResource( 14 )
 [node name="Impact" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Impact"]
-position = Vector2( 1, -10 )
+position = Vector2( 1, -11.75 )
 shape = SubResource( 15 )
 
 [node name="PatrulhaTimer" type="Timer" parent="."]
@@ -174,7 +174,7 @@ modulate = Color( 1, 0, 0, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 modulate = Color( 0.623529, 0.164706, 0.164706, 1 )
-position = Vector2( 0.5, 5 )
+position = Vector2( 1, 5 )
 shape = SubResource( 27 )
 
 [connection signal="body_entered" from="Impact" to="." method="_on_Impact_body_entered"]

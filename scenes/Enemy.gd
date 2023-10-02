@@ -10,7 +10,7 @@ var flip = false
 var pause = false
 
 func _physics_process(delta):
-	motion.y += gravity
+#	motion.y += gravity
 	
 	if not pause:
 		if not flip:
@@ -25,7 +25,7 @@ func _physics_process(delta):
 
 		motion = move_and_slide(motion, UP)
 	
-	if not $RayCast2D.is_colliding() && is_on_floor():
+	if not $RayCast2D.is_colliding():
 		flip()
 		$Sprite.play("idle")
 		$PatrulhaTimer.start()
@@ -42,11 +42,13 @@ func _on_PatrulhaTimer_timeout():
 
 func _on_Impact_body_entered(body):
 	if body is Player:
-		queue_free()
-		body.motion.y = body.JUMP_FORCE
+		if body.is_alive:
+			queue_free()
+			body.motion.y = body.JUMP_FORCE
 
 
 
 func _on_Hurtbox_body_entered(body):
 	if body is Player:
-		body.die()
+		if not body.is_falling():
+			body.die()

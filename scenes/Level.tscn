@@ -157,22 +157,22 @@ position = Vector2( 453, 294 )
 position = Vector2( 500, 294 )
 
 [node name="Enemy" parent="." instance=ExtResource( 5 )]
-position = Vector2( 619, 300 )
+position = Vector2( 619, 302 )
 scale = Vector2( 1.2, 1.2 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 561, 392 )
+position = Vector2( 561, 394 )
 scale = Vector2( 1.2, 1.2 )
 
 [node name="Enemy3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1534, 389 )
-scale = Vector2( 1.2, 1.2 )
-
-[node name="Enemy4" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1308, 389 )
+position = Vector2( 1534, 397 )
 scale = Vector2( 1.2, 1.2 )
 collision_layer = 2
 collision_mask = 2
+
+[node name="Enemy4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1308, 397 )
+scale = Vector2( 1.2, 1.2 )
 
 [node name="Blocks" type="Node2D" parent="."]
 

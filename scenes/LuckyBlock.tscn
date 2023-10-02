@@ -41,7 +41,7 @@ animations = [ {
 extents = Vector2( 16, 16 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 7, 1 )
+extents = Vector2( 15, 1 )
 
 [sub_resource type="Animation" id=10]
 resource_name = "Bateu"
@@ -120,6 +120,7 @@ position = Vector2( 0, 3 )
 scale = Vector2( 0.26, 0.26 )
 frames = SubResource( 9 )
 animation = "coin"
+frame = 3
 playing = true
 
 [node name="Sprite" type="Sprite" parent="."]

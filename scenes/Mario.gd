@@ -9,6 +9,7 @@ const ACCELERATION = 30
 var JUMP_FORCE = -650
 var jump = false
 var jump_count = 1
+var is_alive = true
 
 func _ready():
 	position.x = 180
@@ -48,6 +49,9 @@ func _physics_process(delta):
 	
 	motion = move_and_slide(motion, UP)
 
+func is_falling():
+	return motion.y > 0
 
 func die():
 	$AnimationPlayer.play("Dead")
+	is_alive = false
