@@ -33,6 +33,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_up") and jump_count > 0:
 		jump_count -= 1
 		motion.y = JUMP_FORCE
+	print(motion.y)
 		
 	if is_on_floor():
 		jump_count = 1
