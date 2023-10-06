@@ -27,13 +27,18 @@ _global_script_class_icons={
 [application]
 
 config/name="Malario"
-run/main_scene="res://scenes/Levels/Level1.tscn"
+run/main_scene="res://scenes/Levels/Level2.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Global="*res://global.gd"
 Hud="*res://scenes/HUD.tscn"
+
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [gui]
 

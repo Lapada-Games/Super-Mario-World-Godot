@@ -41,8 +41,6 @@ func _on_PatrulhaTimer_timeout():
 
 func _on_Hurtbox_body_entered(body):
 	if body is Player:
-		print(body.global_position.y)
-		print(global_position.y)
 		if body.is_falling() and body.global_position.y <= global_position.y:
 			body.motion.y = body.JUMP_FORCE
 			body.stomp_enemy()

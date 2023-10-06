@@ -12,7 +12,7 @@ const ACCELERATION = 30
 var JUMP_FORCE = -680
 var jump = false
 var is_alive = true
-var is_big = false
+#var is_big = false
 var invincible = false
 var is_on_pipe = false
 
@@ -25,6 +25,11 @@ var animations = [
 	["run", "idle", "jump", "fall"],
 	["run_big", "idle_big", "jump_big", "fall_big"],
 ]
+
+func _ready():
+	if Global.is_big:
+		$Sprite.position.y -= 8
+		current_animation_index = 1
 
 func _physics_process(delta):
 	
@@ -82,17 +87,17 @@ func is_falling():
 	return motion.y > 0
 	
 func grow():
-	if not is_big:
+	if not Global.is_big:
 		$Sprite.position.y -= 8
 		current_animation_index = 1
-		is_big = true
+		Global.is_big = true
 		$PowerUp.play()
 
 func damage():
-	if is_big:
+	if Global.is_big:
 		$Sprite.position.y += 8
 		current_animation_index = 0
-		is_big = false
+		Global.is_big = false
 		invincible = true
 		$AnimationPlayer.play("flashing")
 		$PowerDown.play()
@@ -123,4 +128,9 @@ func stomp_enemy():
 	$StompEnemy.play()
 
 func _on_AfterDeath_timeout():
-	get_tree().reload_current_scene()
+	Global.lifes -= 1
+	Hud.update_hud()
+	if Global.lifes > 0:
+		get_tree().reload_current_scene()
+	else:
+		get_tree().change_scene("res://scenes/HUD.tscn")
