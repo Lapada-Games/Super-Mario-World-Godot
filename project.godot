@@ -24,6 +24,11 @@ config/name="Malario"
 run/main_scene="res://scenes/Level.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://global.gd"
+Hud="*res://scenes/HUD.tscn"
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true

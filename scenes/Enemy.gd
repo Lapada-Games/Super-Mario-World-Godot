@@ -25,11 +25,11 @@ func _physics_process(delta):
 
 		motion = move_and_slide(motion, UP)
 	
-	if not $RayCast2D.is_colliding():
+	if not $RayCast2D.is_colliding() or $RayCast2D2.is_colliding():
 		flip()
 		$Sprite.play("idle")
-		$PatrulhaTimer.start()
-		pause = true
+#		$PatrulhaTimer.start()
+#		pause = true
 	
 
 func flip():
@@ -40,15 +40,11 @@ func _on_PatrulhaTimer_timeout():
 	pause = false
 
 
-func _on_Impact_body_entered(body):
-	if body is Player:
-		if body.is_alive:
-			queue_free()
-			body.motion.y = body.JUMP_FORCE
-
-
-
 func _on_Hurtbox_body_entered(body):
 	if body is Player:
-		if not body.is_falling():
-			body.die()
+		if body.is_falling() and body.global_position.y <= global_position.y:
+			body.motion.y = body.JUMP_FORCE
+			body.stomp_enemy()
+			queue_free()
+		else:
+			body.damage()

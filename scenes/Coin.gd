@@ -18,4 +18,5 @@ func _ready():
 
 func _on_Moeda_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	if body is Player:
+		body.pick_coin()
 		queue_free()
