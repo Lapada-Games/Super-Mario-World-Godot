@@ -135,29 +135,29 @@ position = Vector2( 5985, 90 )
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Enemy" parent="Enemies" instance=ExtResource( 5 )]
-position = Vector2( 619, 302 )
+position = Vector2( 614, 294 )
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource( 5 )]
-position = Vector2( 565, 400 )
+position = Vector2( 558, 390 )
 
 [node name="Enemy3" parent="Enemies" instance=ExtResource( 5 )]
-position = Vector2( 1810, 395 )
+position = Vector2( 1809, 391 )
 
 [node name="Enemy4" parent="Enemies" instance=ExtResource( 5 )]
-position = Vector2( 1900, 395 )
+position = Vector2( 1900, 390 )
 
 [node name="Enemy5" parent="Enemies" instance=ExtResource( 5 )]
-position = Vector2( 3219, 395 )
+position = Vector2( 3219, 388 )
 collision_layer = 2
 collision_mask = 4
 
 [node name="Enemy6" parent="Enemies" instance=ExtResource( 5 )]
-position = Vector2( 3118, 395 )
+position = Vector2( 3117, 390 )
 collision_layer = 2
 collision_mask = 4
 
 [node name="Enemy7" parent="Enemies" instance=ExtResource( 5 )]
-position = Vector2( 3239, 147 )
+position = Vector2( 3239, 141 )
 collision_layer = 2
 collision_mask = 4
 

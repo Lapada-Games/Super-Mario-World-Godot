@@ -10,8 +10,7 @@ var flip = false
 var pause = false
 
 func _physics_process(delta):
-#	motion.y += gravity
-	
+	motion.y += gravity
 	if not pause:
 		if not flip:
 	#		motion.x = min(motion.x+ACCELERATION, MAXVELOCITY)
@@ -42,6 +41,8 @@ func _on_PatrulhaTimer_timeout():
 
 func _on_Hurtbox_body_entered(body):
 	if body is Player:
+		print(body.global_position.y)
+		print(global_position.y)
 		if body.is_falling() and body.global_position.y <= global_position.y:
 			body.motion.y = body.JUMP_FORCE
 			body.stomp_enemy()
