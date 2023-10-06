@@ -2,6 +2,7 @@ extends KinematicBody2D
 class_name Player
 
 signal death
+signal entered_pipe
 
 var gravity = 30
 var motion = Vector2()
@@ -13,6 +14,7 @@ var jump = false
 var is_alive = true
 var is_big = false
 var invincible = false
+var is_on_pipe = false
 
 var winner = false
 var pole_final_position = null
@@ -49,7 +51,14 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
 		motion.y = JUMP_FORCE
 		$Jump.play()
-		
+	
+	if Input.is_action_just_pressed("ui_down") and is_on_pipe:
+		self.z_index = 0
+		set_physics_process(false)
+		$AnimationPlayer.play("GoingDownPipe")
+		$PowerDown.play()
+		emit_signal("entered_pipe")
+	
 	if not is_on_floor():
 		if motion.y < 0:
 			$Sprite.play(animations[current_animation_index][2])

@@ -9,19 +9,25 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Area2D",
+"class": "PipeEntrance",
+"language": "GDScript",
+"path": "res://Pipe.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
 "path": "res://scenes/Mario.gd"
 } ]
 _global_script_class_icons={
+"PipeEntrance": "",
 "Player": ""
 }
 
 [application]
 
 config/name="Malario"
-run/main_scene="res://scenes/Level1.tscn"
+run/main_scene="res://scenes/Levels/Level1.tscn"
 config/icon="res://icon.png"
 
 [autoload]
