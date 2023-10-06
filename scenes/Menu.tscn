@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/music/menu.mp3" type="AudioStream" id=1]
+[ext_resource path="res://assets/menu.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Menu.gd" type="Script" id=3]
+[ext_resource path="res://assets/2023-10-06-12-51-45.webm" type="VideoStream" id=4]
+
+[node name="Menu" type="Control"]
+script = ExtResource( 3 )
+
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+margin_left = -73.0
+margin_top = -135.0
+margin_right = 1093.0
+margin_bottom = 645.0
+stream = ExtResource( 4 )
+autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 169.0
+margin_top = 1.0
+margin_right = 856.0
+margin_bottom = 688.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true

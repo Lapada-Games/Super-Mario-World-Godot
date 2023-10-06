@@ -131,6 +131,7 @@ func _on_AfterDeath_timeout():
 	Global.lifes -= 1
 	Hud.update_hud()
 	if Global.lifes > 0:
+		Global.is_big = false
 		get_tree().reload_current_scene()
 	else:
-		get_tree().change_scene("res://scenes/HUD.tscn")
+		get_tree().change_scene("res://scenes/GameOver.tscn")
