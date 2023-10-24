@@ -6,7 +6,7 @@ This is a college work of a Super Mario clone that implements a gamepad using th
 
 Made using **Godot 3.5.2**
 
-[Here is a video](https://youtu.be/wZtoTqJBVSU) that shows the game and the ESP32 controller implementation
+[Here is a video](https://youtu.be/CCXh-xdAgdk) that shows the game and the ESP32 controller implementation
 
 ## Gallery
 
